@@ -30,8 +30,26 @@ vim.lsp.config("ts_ls", {
   end,
 })
 
+
+vim.lsp.config("templ", {
+  capabilities = capabilities
+})
+
+vim.lsp.config("lua_ls", {
+  capabilities = capabilities
+})
+
+vim.lsp.config("tailwindcss", {
+  capabilities = capabilities
+})
+
+
+
 vim.lsp.enable("gopls")
 vim.lsp.enable("ts_ls")
+vim.lsp.enable("templ")
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("tailwindcss")
 
 -- diagnostics UI
 vim.diagnostic.config({
