@@ -1,39 +1,39 @@
 -- autopairs
 require("nvim-autopairs").setup({
-  check_ts = true,
+	check_ts = true,
 })
 
 -- formatter
 require("conform").setup({
-  formatters_by_ft = {
-    javascript = { "prettierd", "prettier", stop_after_first = true },
-    typescript = {  "prettierd", "prettier", stop_after_first = true  },
-    typescriptreact = {  "prettierd", "prettier", stop_after_first = true  },
-    javascriptreact = { "prettierd", "prettier", stop_after_first = true },
-    go = { "gofmt", "goimports", stop_after_first = true },
-    lua = { "stylua" },
-    css = { "prettierd", "prettier", stop_after_first = true },
-  },
+	formatters_by_ft = {
+		javascript = { "prettier" },
+		typescript = { "prettier" },
+		typescriptreact = { "prettier" },
+		javascriptreact = { "prettier" },
+		go = { "gofmt", "goimports", stop_after_first = true },
+		lua = { "stylua" },
+		css = { "prettier" },
+	},
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  callback = function(args)
-    require("conform").format({
-      bufnr = args.buf,
-      async = false,
-    })
-  end,
+	callback = function(args)
+		require("conform").format({
+			bufnr = args.buf,
+			async = false,
+		})
+	end,
 })
 
 -- TS organize imports
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.ts", "*.tsx" },
-  callback = function()
-    vim.lsp.buf.code_action({
-      context = { only = { "source.organizeImports" } },
-      apply = true,
-    })
-  end,
+	pattern = { "*.ts", "*.tsx" },
+	callback = function()
+		vim.lsp.buf.code_action({
+			context = { only = { "source.organizeImports" } },
+			apply = true,
+		})
+	end,
 })
 
 -- ✅ TODO comments (huge ROI)
