@@ -21,5 +21,6 @@ require("telescope").setup({
 
 vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files)
 vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep)
+vim.keymap.set("n", "<leader>s.", require("telescope.builtin").oldfiles)
 
 vim.cmd.colorscheme("catppuccin")
