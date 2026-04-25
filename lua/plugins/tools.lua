@@ -13,6 +13,7 @@ require("conform").setup({
 		go = { "gofmt", "goimports", stop_after_first = true },
 		lua = { "stylua" },
 		css = { "prettier" },
+		templ = { "templ" },
 	},
 })
 
@@ -44,6 +45,5 @@ require("trouble").setup()
 
 vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<CR>")
 
--- ⚡ flash navigation (INSANE speed boost)
 require("flash").setup()
 vim.keymap.set("n", "s", require("flash").jump)

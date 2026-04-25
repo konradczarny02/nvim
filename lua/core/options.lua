@@ -32,3 +32,7 @@ vim.opt.swapfile = false -- Don't create swap files
 vim.opt.undofile = true -- Persistent undo
 
 vim.opt.confirm = true
+
+vim.diagnostic.config({
+	virtual_text = true,
+})
