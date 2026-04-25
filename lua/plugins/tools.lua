@@ -14,6 +14,9 @@ require("conform").setup({
 		lua = { "stylua" },
 		css = { "prettier" },
 		templ = { "templ" },
+		cpp = { "clang_format" },
+		c = { "clang_format" },
+		json = { "prettier" },
 	},
 })
 

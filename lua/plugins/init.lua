@@ -5,7 +5,7 @@ vim.pack.add({
 
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", lazy = false, build = ":TSUpdate" },
 
-	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
+	--{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
@@ -22,6 +22,7 @@ vim.pack.add({
 	{ src = "https://github.com/folke/flash.nvim" },
 
 	{ src = "https://github.com/catppuccin/nvim" },
+	{ src = "https://github.com/stevearc/oil.nvim" },
 })
 
 require("plugins.lsp")

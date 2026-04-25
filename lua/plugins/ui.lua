@@ -2,12 +2,17 @@ require("which-key").setup()
 
 require("gitsigns").setup()
 
-require("nvim-tree").setup({
-	view = { width = 50 },
-	renderer = { group_empty = true },
-})
+--require("nvim-tree").setup({
+--	view = { width = 50 },
+--	renderer = { group_empty = true },
+--})
 
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>")
+--vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>")
+--
+
+require("oil").setup()
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 require("telescope").setup({
 	defaults = {
