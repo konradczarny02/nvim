@@ -21,7 +21,7 @@ This config uses **Neovim 0.12+** native APIs throughout — no lazy.nvim, no pa
 
 **LSP setup pattern**: Uses the new `vim.lsp.config("server", { ... })` + `vim.lsp.enable("server")` API, not `require("lspconfig").server.setup()`. Configured servers: `gopls`, `ts_ls`, `templ`, `lua_ls`, `tailwindcss`.
 
-**Formatting**: conform.nvim formats on `BufWritePre` for Go (gofmt/goimports), JS/TS/CSS/JSON/templ (prettier), Lua (stylua). TypeScript also runs organize-imports via LSP on save. `ts_ls` has `documentFormattingProvider` disabled so prettier takes over.
+**Formatting**: conform.nvim formats on `BufWritePre` for Go (goimports + gofumpt), JS/TS/CSS/JSON/templ (prettier), Lua (stylua). TypeScript also runs organize-imports via LSP on save. `ts_ls` has `documentFormattingProvider` disabled so prettier takes over.
 
 **Completion**: blink.cmp with `<C-p>`/`<C-n>` navigate, `<C-y>` accept, `<Tab>`/`<S-Tab>` for snippets (LuaSnip).
 
@@ -29,7 +29,7 @@ This config uses **Neovim 0.12+** native APIs throughout — no lazy.nvim, no pa
 
 | Language | LSP | Formatter |
 |---|---|---|
-| Go | gopls (gofumpt, staticcheck) | gofmt / goimports |
+| Go | gopls (gofumpt, staticcheck) | goimports + gofumpt |
 | TypeScript / JS | ts_ls | prettier |
 | Lua | lua_ls | stylua |
 | templ | templ | templ |
@@ -45,7 +45,7 @@ This config uses **Neovim 0.12+** native APIs throughout — no lazy.nvim, no pa
 | `<leader>s.` | Telescope recent files |
 | `<leader>xx` | Toggle Trouble diagnostics panel |
 | `s` | Flash jump |
-| `gd` / `gr` / `K` | LSP go-to-def / references / hover |
+| `gd` / `grr` / `K` | LSP go-to-def / references / hover (`grr`, `K` are Neovim defaults) |
 | `<leader>rn` / `<leader>ca` | LSP rename / code action |
 | `<leader>q` | Open diagnostics quickfix list |
 | `<leader>h` / `<leader>l` | Jump to line start / end |

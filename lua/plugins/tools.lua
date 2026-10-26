@@ -10,7 +10,13 @@ require("conform").setup({
 		typescript = { "prettier" },
 		typescriptreact = { "prettier" },
 		javascriptreact = { "prettier" },
-		go = { "gofmt", "goimports", stop_after_first = true },
+		-- goimports + gofumpt when installed, otherwise plain gofmt
+		go = function(bufnr)
+			if require("conform").get_formatter_info("goimports", bufnr).available then
+				return { "goimports", "gofumpt" }
+			end
+			return { "gofmt" }
+		end,
 		lua = { "stylua" },
 		css = { "prettier" },
 		templ = { "templ" },
@@ -44,7 +50,7 @@ require("todo-comments").setup()
 -- diagnostics panel
 require("trouble").setup()
 
-vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<CR>")
+vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Toggle Trouble diagnostics" })
 
 require("flash").setup()
 vim.keymap.set("n", "s", require("flash").jump)

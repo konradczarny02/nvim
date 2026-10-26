@@ -36,6 +36,15 @@ vim.lsp.config("templ", {
 
 vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
+	settings = {
+		Lua = {
+			runtime = { version = "LuaJIT" },
+			workspace = {
+				checkThirdParty = false,
+				library = { vim.env.VIMRUNTIME },
+			},
+		},
+	},
 })
 
 vim.lsp.config("tailwindcss", {
