@@ -8,7 +8,8 @@ This config uses **Neovim 0.12+** native APIs throughout — no lazy.nvim, no pa
 
 - `init.lua` — entry point, loads `core.*` then `plugins`
 - `lua/core/options.lua` — vim options and globals (leader = `<Space>`)
-- `lua/core/keymaps.lua` — global keymaps (LSP, diagnostics, `jk` → Esc)
+- `lua/core/keymaps.lua` — global keymaps (LSP, diagnostics, windows, `jk` → Esc)
+- `lua/core/autocmds.lua` — global autocmds (highlight on yank)
 - `lua/plugins/init.lua` — `vim.pack.add(...)` plugin declarations, then requires each plugin config module
 - `lua/plugins/lsp.lua` — LSP via native `vim.lsp.config` / `vim.lsp.enable` (not lspconfig's `setup()`)
 - `lua/plugins/cmp.lua` — blink.cmp (completion), conform.nvim (format-on-save), todo-comments, trouble, flash
@@ -43,12 +44,19 @@ This config uses **Neovim 0.12+** native APIs throughout — no lazy.nvim, no pa
 | `<leader>sf` | Telescope find files |
 | `<leader>sg` | Telescope live grep |
 | `<leader>s.` | Telescope recent files |
+| `<leader>sb` / `<leader><leader>` | Telescope buffers |
+| `<leader>sh` | Telescope help tags |
+| `<leader>sd` | Telescope diagnostics |
+| `<leader>/` | Fuzzy search in current buffer |
 | `<leader>xx` | Toggle Trouble diagnostics panel |
-| `s` | Flash jump |
+| `s` | Flash jump (normal, visual, operator-pending) |
 | `gd` / `grr` / `K` | LSP go-to-def / references / hover (`grr`, `K` are Neovim defaults) |
 | `<leader>rn` / `<leader>ca` | LSP rename / code action |
 | `<leader>q` | Open diagnostics quickfix list |
 | `<leader>h` / `<leader>l` | Jump to line start / end |
+| `<C-h/j/k/l>` | Move between windows |
+| `<Esc>` | Clear search highlight |
+| `<leader>pu` | Update plugins (`vim.pack.update()`) |
 
 ## Testing changes
 

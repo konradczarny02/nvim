@@ -56,9 +56,3 @@ vim.lsp.enable("ts_ls")
 vim.lsp.enable("templ")
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("tailwindcss")
-
--- diagnostics UI
-vim.diagnostic.config({
-	float = { border = "rounded" },
-	severity_sort = true,
-})

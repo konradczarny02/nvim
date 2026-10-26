@@ -53,4 +53,4 @@ require("trouble").setup()
 vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Toggle Trouble diagnostics" })
 
 require("flash").setup()
-vim.keymap.set("n", "s", require("flash").jump)
+vim.keymap.set({ "n", "x", "o" }, "s", require("flash").jump, { desc = "Flash jump" })

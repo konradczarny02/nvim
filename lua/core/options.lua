@@ -13,6 +13,15 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.signcolumn = "yes"
 vim.o.updatetime = 200
 
+vim.o.winborder = "rounded" -- borders for hover, signature help, diagnostic floats
+vim.o.scrolloff = 8
+vim.o.cursorline = true
+vim.o.splitright = true
+vim.o.splitbelow = true
+vim.o.inccommand = "split" -- live preview of :s
+vim.o.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -35,4 +44,5 @@ vim.opt.confirm = true
 
 vim.diagnostic.config({
 	virtual_text = true,
+	severity_sort = true,
 })
