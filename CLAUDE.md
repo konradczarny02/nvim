@@ -15,6 +15,7 @@ This config uses **Neovim 0.12+** native APIs throughout — no lazy.nvim, no pa
 - `lua/plugins/cmp.lua` — blink.cmp (completion), conform.nvim (format-on-save), todo-comments, trouble, flash
 - `lua/plugins/treesitter.lua` — treesitter parser installs and FileType autocmds
 - `lua/plugins/ui.lua` — which-key, gitsigns, oil.nvim (file browser, replaces netrw), telescope, catppuccin theme
+- vim-tmux-navigator has no setup call; its keymaps live in `core/keymaps.lua` (the tmux side is in `~/.tmux.conf`)
 
 ## Key design points
 
@@ -54,7 +55,7 @@ This config uses **Neovim 0.12+** native APIs throughout — no lazy.nvim, no pa
 | `<leader>rn` / `<leader>ca` | LSP rename / code action |
 | `<leader>q` | Open diagnostics quickfix list |
 | `<leader>h` / `<leader>l` | Jump to line start / end |
-| `<C-h/j/k/l>` | Move between windows |
+| `<C-h/j/k/l>` | Move between nvim windows and tmux panes (vim-tmux-navigator) |
 | `<Esc>` | Clear search highlight |
 | `<leader>pu` | Update plugins (`vim.pack.update()`) |
 

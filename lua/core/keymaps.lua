@@ -5,11 +5,11 @@ map("n", "<leader>h", "^", { desc = "Go to line start" })
 map("n", "<leader>l", "$", { desc = "Go to line end" })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
--- windows
-map("n", "<C-h>", "<C-w>h", { desc = "Focus left window" })
-map("n", "<C-j>", "<C-w>j", { desc = "Focus lower window" })
-map("n", "<C-k>", "<C-w>k", { desc = "Focus upper window" })
-map("n", "<C-l>", "<C-w>l", { desc = "Focus right window" })
+-- windows (vim-tmux-navigator: also moves into neighbouring tmux panes)
+map("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>", { desc = "Focus left window/pane" })
+map("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", { desc = "Focus lower window/pane" })
+map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", { desc = "Focus upper window/pane" })
+map("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>", { desc = "Focus right window/pane" })
 
 -- LSP
 -- Neovim defaults: K (hover), grr (references), gri (implementation), grn (rename), gra (code action)

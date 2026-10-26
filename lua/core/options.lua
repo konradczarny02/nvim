@@ -22,6 +22,9 @@ vim.o.inccommand = "split" -- live preview of :s
 vim.o.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
+-- vim-tmux-navigator: mappings are defined in core/keymaps.lua
+vim.g.tmux_navigator_no_mappings = 1
+
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
