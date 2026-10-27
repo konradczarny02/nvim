@@ -9,7 +9,7 @@ This config uses **Neovim 0.12+** native APIs throughout — no lazy.nvim, no pa
 - `init.lua` — entry point, loads `core.*` then `plugins`
 - `lua/core/options.lua` — vim options and globals (leader = `<Space>`)
 - `lua/core/keymaps.lua` — global keymaps (LSP, diagnostics, windows, `jk` → Esc)
-- `lua/core/autocmds.lua` — global autocmds (highlight on yank)
+- `lua/core/autocmds.lua` — global autocmds (highlight on yank, reload files changed on disk e.g. by AI agents)
 - `lua/plugins/init.lua` — `vim.pack.add(...)` plugin declarations, then requires each plugin config module
 - `lua/plugins/lsp.lua` — LSP via native `vim.lsp.config` / `vim.lsp.enable` (not lspconfig's `setup()`)
 - `lua/plugins/cmp.lua` — blink.cmp (completion), conform.nvim (format-on-save), todo-comments, trouble, flash
